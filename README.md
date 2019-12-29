@@ -27,7 +27,7 @@ My task is to take the starting point HTML file, and add JavaScript functionalit
 - JavaScript (ES6)
 - UX
 
-### Wireframes
+### Wireframing
 
 Rough draft of the landing page I initially created: 
 
@@ -41,7 +41,7 @@ Play screen:
 
 Link to Rock Paper Scissors is here.
 
-Here's screen grab of the landing page:
+Here's a screen grab of the landing page:
 
 <img src='https://i.imgur.com/7UFG1Yz.png' alt='landingpage'>
 
@@ -65,7 +65,7 @@ And a live demo of me playing against the computer:
 
 ### Process
 
-Firstly, in the index.html file, I built a whole section containing the score, intro screen and a second screen that would switch to the game screen. I created classes to differentiate the divs and knew this would serve handy when isolating them in my javascript.
+Firstly, in the index.html file, I built a whole section containing the score, intro screen, and a second screen that would switch to the game screen. I created classes to differentiate the divs and knew this would serve handy when isolating them in my javascript.
 
 
 ```<section class="game"> 
@@ -121,7 +121,7 @@ I  added ```fadeOut``` and ```fadeIn``` classes to query select in my app.js fil
 After that I wanted to approach the options the player would have and the computer would randomly select. 
 
 The first line within the playMatch function will select all the buttons for the options.
-The second and tihrd lines reflect the two hands- the player hand and computer hand, which by default, reflect 'rock'. 
+The second and third lines reflect the two hands- the player hand and computer hand, which by default, reflect 'rock'. 
 
 ```
 const playMatch = () => {
@@ -162,12 +162,9 @@ I used the Math.floor array method and encapsulated eveything within the Math.ra
 
 I needed to think about a comparison function that would compare the choices of the two players and who was ultimately winning on each turn. I needed to think about feeding it the choice the player was making, aswell as the computer choice- and the scenarios ultimately from the combination of choices.
 
-This meant lots of If statements wrapped in an arrow function. I needed to include the values of the options that the player and computer make from 'playMatch'- therefore playerChoice, and computerChoice are wrapped in parenthesis to feed in to the function. Everytime the click event logs the choice from playMatch, it's going to be fed into this comparison function.
+This meant lots of If statements wrapped in an arrow function. I needed to include the values of the options that the player and computer make from 'playMatch'- therefore playerChoice, and computerChoice are wrapped in parenthesis to feed in to the function. Everytime the click event logged the choice from playMatch, it was going to be fed into this comparison function.
 
-The large text above the images, is also updated with who is winning, or if there is a tie using. 
-
-I did this by first selecting the class: ```const winner = document.querySelector('.winner') ``
-
+The summary above the images, was also going to need updating with who is winning, or if there is a tie. I did this by first selecting the class: ```const winner = document.querySelector('.winner') ``
 Then adding the below, dependent on the scenario in the If statement: 
 ``` winner.textContent = 'It\'s a tie!' ```
 
@@ -229,8 +226,8 @@ const compareHands = (playerChoice, computerChoice) => {
 ```
 ### Updating Images
 
-I accessed the images stored locally to change the images dependent on the choices made.
-The template literals were used to reflect the different image paths dependent on the the choices.
+I accessed images stored locally to change the images, dependent on the choices made.
+The template literals were used to reflect the different image paths dependent on these the choices.
 
 ``` setTimeout(() => {
 
@@ -251,7 +248,7 @@ The template literals were used to reflect the different image paths dependent o
 
 ### Scores
 
-To update the score, I had to write up a seperate function.  
+To update the score, I had to write up a seperate function, isolating the classes that needed updating.  
 
 ```const updateScore = () => {
       const playerScore = document.querySelector('.player-score p')
@@ -263,15 +260,17 @@ To update the score, I had to write up a seperate function.
 
 The above function needed to be called everytime a player scored within the main compareHands function. I needed to increment the number to change the value by adding 1. If in one scenario, the playerHand won, pScore++ was added, and if the computerHand won, cScore++ was added. 
 
-To update the scoreboard, ```updateScore()`` function was added after the score increment.
+To update the scoreboard, ```updateScore()``` function was added after the score increment.
 
 ### Challenges
 
-Adding updating the scoreboard was the main challenge in this project.
+Trying to figure out syntactically, how to update the scoreboard was the main challenge in this project.
 
 ### Wins
 
-Playing around with array methods in this game, helped solidify some knowledge on just how useful they can be. Getting the computer to select it's own choice through random allocation was areally big win for me.
+Playing around with array methods in this game, helped solidify some knowledge on just how useful they can be. Getting the computer to select its own choice through random allocation was a really big win for me- it felt very cool coding that part out!
+
+Adding audio during player-wins was enteratining, albeit I realise it can get annoying very quickly for the user. 
 
 ### Future features
 
