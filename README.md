@@ -22,7 +22,7 @@ My task is to take the starting point HTML file, and add JavaScript functionalit
 - Algorithm
 - Git
 - GitHub
-- HTML5
+- HTML5/ HTML5 Audio
 - CSS, Flexbox 
 - JavaScript (ES6)
 - UX
@@ -139,23 +139,139 @@ const playMatch = () => {
 
 My next step was to establish how I was going to generate the computer's options. I needed the computer to generate a random number between 0, 1 and 2.
 
-I created an array first: 
+I created an array first to reflect the computer options: 
 ```
  //computer options
       const computerOptions = ['rock', 'paper', 'scissors']
 ```
+I then wanted to generate the random number, and based on that random index, associate it with the above array of choices.
 
+```
+options.forEach(option => {
+        option.addEventListener('click', function() { //for each button we can add an event listener
+        // console.log(this); this will be the computer choice
+          const computerNumber = Math.floor(Math.random() * 3) //round the number up
+          const computerChoice = computerOptions[computerNumber]
+          // console.log(computerChoice)
+```
 
+Methods used: I added an event listener in a regular function here to trigger an event on three seperate button options. Based on the player choice and therefore the eventlistener, the computer would then be triggered to select a random choice of its own- in theory.
+I used the Math.floor array method and encapsulated eveything within the Math.random() method to round it up to the nearest whole index. 
+
+### Logic and Comparison Function
+
+I needed to think about a comparison function that would compare the choices of the two players and who was ultimately winning on each turn. I needed to think about feeding it the choice the player was making, aswell as the computer choice- and the scenarios ultimately from the combination of choices.
+
+This meant lots of If statements wrapped in an arrow function. I needed to include the values of the options that the player and computer make from 'playMatch'- therefore playerChoice, and computerChoice are wrapped in parenthesis to feed in to the function. Everytime the click event logs the choice from playMatch, it's going to be fed into this comparison function.
+
+The large text above the images, is also updated with who is winning, or if there is a tie using. 
+
+I did this by first selecting the class: ```const winner = document.querySelector('.winner') ``
+
+Then adding the below, dependent on the scenario in the If statement: 
+``` winner.textContent = 'It\'s a tie!' ```
+
+```
+const compareHands = (playerChoice, computerChoice) => {
+    //updating text here
+      const winner = document.querySelector('.winner')
+      if (playerChoice === computerChoice) {
+        winner.textContent = 'It\'s a tie!'
+        return
+      } 
+      //check for rock
+      if (playerChoice === 'rock') {
+        if (computerChoice === 'scissors') {
+          winner.textContent = 'You Win!'
+          pScore++
+          updateScore()
+          clapping()
+          return
+        } else {
+          winner.textContent = 'Computer Wins'
+          cScore++
+          updateScore()
+          return
+        }
+      }
+      // check for paper
+      if (playerChoice === 'paper') {
+        if (computerChoice === 'scissors') {
+          winner.textContent = 'Computer Wins'
+          cScore++
+          updateScore()
+          return
+        } else {
+          winner.textContent = 'You Win!'
+          pScore++
+          updateScore()
+          clapping()
+          return
+        }
+      }
+      // check for scissors
+      if (playerChoice === 'scissors') {
+        if (computerChoice === 'rock') {
+          winner.textContent = 'Computer Wins'
+          cScore++
+          updateScore()
+          return
+        } else {
+          winner.textContent = 'You Win!'
+          pScore++
+          updateScore()
+          clapping()
+          return
+        }
+      }
+    }
+
+```
+### Updating Images
+
+I accessed the images stored locally to change the images dependent on the choices made.
+The template literals were used to reflect the different image paths dependent on the the choices.
+
+``` setTimeout(() => {
+
+            compareHands(this.textContent, computerChoice)
+            // update images
+            playerHand.src = `./images/${this.textContent}.png`
+            computerHand.src = `./images/${computerChoice}.png`
+
+          }, 1000)
+      
+          //shake animation
+          playerHand.style.animation = 'shakePlayer 2s ease'
+          computerHand.style.animation = 'shakeComputer 2s ease'
+        })
+      })
+    } 
+```
 
 ### Scores
 
+To update the score, I had to write up a seperate function.  
+
+```const updateScore = () => {
+      const playerScore = document.querySelector('.player-score p')
+      const computerScore = document.querySelector('.computer-score p')
+      playerScore.textContent = pScore
+      computerScore.textContent = cScore
+    }
+```
+
+The above function needed to be called everytime a player scored within the main compareHands function. I needed to increment the number to change the value by adding 1. If in one scenario, the playerHand won, pScore++ was added, and if the computerHand won, cScore++ was added. 
+
+To update the scoreboard, ```updateScore()`` function was added after the score increment.
+
 ### Challenges
 
-### Bonus
+Adding updating the scoreboard was the main challenge in this project.
 
 ### Wins
 
-Playing around with array methods in this game, helped solidify some knowledge on just how useful the ycan be. Getting the computer to select it's own choice through random allocation was areally big win for me.
+Playing around with array methods in this game, helped solidify some knowledge on just how useful they can be. Getting the computer to select it's own choice through random allocation was areally big win for me.
 
 ### Future features
 
