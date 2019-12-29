@@ -22,9 +22,20 @@ My task is to take the starting point HTML file, and add JavaScript functionalit
 - Algorithm
 - Git
 - GitHub
-- HTML5 
+- HTML5
+- CSS, Flexbox 
 - JavaScript (ES6)
 - UX
+
+### Wireframes
+
+Rough draft of the landing page I initially created: 
+
+<img src='https://i.imgur.com/IETeQi8.png' alt='landingpgwireframe'>
+
+Play screen: 
+
+<img src='https://i.imgur.com/GHNd5yS.png' alt='playscreenwireframe'>
 
 ### Functionality
 
@@ -109,6 +120,9 @@ I  added ```fadeOut``` and ```fadeIn``` classes to query select in my app.js fil
 ```
 After that I wanted to approach the options the player would have and the computer would randomly select. 
 
+The first line within the playMatch function will select all the buttons for the options.
+The second and tihrd lines reflect the two hands- the player hand and computer hand, which by default, reflect 'rock'. 
+
 ```
 const playMatch = () => {
       const options = document.querySelectorAll('.options button')
@@ -122,6 +136,15 @@ const playMatch = () => {
         })
       })
 ```
+
+My next step was to establish how I was going to generate the computer's options. I needed the computer to generate a random number between 0, 1 and 2.
+
+I created an array first: 
+```
+ //computer options
+      const computerOptions = ['rock', 'paper', 'scissors']
+```
+
 
 
 ### Scores
