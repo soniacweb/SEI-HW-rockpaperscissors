@@ -20,7 +20,7 @@ My task is to take the starting point HTML file, and add JavaScript functionalit
 
 ### Technologies Used:
 - Algorithm
-- Git;
+- Git
 - GitHub
 - HTML5 
 - JavaScript (ES6)
@@ -40,7 +40,7 @@ Once the player hits the play button, it triggers the start of the game. There, 
 
 On page load, it's the player's move. I have also included a Score's tally above the two images for the player's FYI.
 
-And a live demo if me playing against the computer:
+And a live demo of me playing against the computer:
 
 <img src='https://i.imgur.com/7rfnW2a.gif' alt='playdemo'>
 
@@ -86,10 +86,43 @@ Firstly, in the index.html file, I built a whole section containing the score, i
 ```
 
 
-
-
-
 ### Logic
+
+Once I got the basics fleshed out, I wanted to figure out how to include my initial landing page- the first screen the player would see before entering the main game screen.
+
+I  added ```fadeOut``` and ```fadeIn``` classes to query select in my app.js file, before applying display block and display none in my css, to reveal and hide the two different screens upon being triggered by a click event.
+
+```
+//start the game
+    const startGame = () => {
+      gametheme()
+      const playBtn = document.querySelector('.intro button')
+      const introScreen = document.querySelector('.intro')
+      const match = document.querySelector('.match')
+      
+
+      playBtn.addEventListener('click', () => {
+        introScreen.classList.add('fadeOut')
+        match.classList.add('fadeIn')
+      })
+    }
+```
+After that I wanted to approach the options the player would have and the computer would randomly select. 
+
+```
+const playMatch = () => {
+      const options = document.querySelectorAll('.options button')
+      const playerHand = document.querySelector('.player-hand')
+      const computerHand = document.querySelector('.computer-hand')
+      const hands = document.querySelectorAll('.hands img')  
+    
+      hands.forEach(hand => {
+        hand.addEventListener('animationend', function() {
+          this.style.animation = ''
+        })
+      })
+```
+
 
 ### Scores
 
