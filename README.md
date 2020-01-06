@@ -39,7 +39,7 @@ Play screen:
 
 ### Functionality
 
-Link to Rock Paper Scissors is here.
+Link to Rock Paper Scissors is <a href="https://soniacweb.github.io/rockpaperscissors/">here.</a>
 
 Here's a screen grab of the landing page:
 
