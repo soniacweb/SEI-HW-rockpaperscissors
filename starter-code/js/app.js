@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             compareHands(this.textContent, computerChoice)
             // update images
-            playerHand.src = `./images/${this.textContent}.png`
-            computerHand.src = `./images/${computerChoice}.png`
+            playerHand.src = `./starter-code/images/${this.textContent}.png`
+            computerHand.src = `./starter-code/images/${computerChoice}.png`
 
           }, 1000)
       
