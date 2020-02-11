@@ -10,8 +10,19 @@ html {
   margin-bottom: 0;
 }
 
+html {
+  
+}
+
+body {
+  /* margin-top: 30px; */
+  background: url('https://i.imgur.com/cuG6nkG.png'), url('https://i.imgur.com/jAmfGt2.png');
+  /* background-size: contain;  */
+  background-size: cover, 200px 150px;
+  border: 2px black;
+}
 div.intro {
-  margin: none;
+  margin-top: 100px;
 }
 
 h1 {
@@ -19,7 +30,8 @@ h1 {
 }
 
 img.logo {
-  margin-top: -100px
+  width: 300px;
+  /* margin-top: -100px */
 }
 section {
 height: 100 vh;
@@ -66,10 +78,10 @@ font-family: 'Permanent Marker', cursive;
   height: 100px;
   width: 100px;
   background: none;
-  border: none;
+  /* border: 1px solid black; */
   color: white;
   font-size: 20px;
-  background: grey;
+  background: lightblue;
   border-radius: 200px;
   cursor: pointer;
   outline: 0;
@@ -137,9 +149,12 @@ div.fadeIn {
   pointer-events: all;
 }
 
-.logo {
-animation:move 4s infinite ease-in-out;
+section.game {
+  padding: 40px;
 }
+/* .logo {
+animation:move 4s infinite ease-in-out;
+} */
 
 /* .logo:hover {
 transform: scale(1.2);
@@ -235,7 +250,7 @@ transition: transform .2s;
 
 
   body {
-    background: lightblue;
+    /* background: lightblue; */
     font-family: 'Permanent Marker', cursive;
     font-size: 30px;
   }
