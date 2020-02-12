@@ -43,17 +43,17 @@ Link to Rock Paper Scissors is <a href="https://soniacweb.github.io/rockpapersci
 
 Here's a screen grab of the landing page:
 
-<img src='https://i.imgur.com/7UFG1Yz.png' alt='landingpage'>
+<img src='https://i.imgur.com/Fdgln3S.png' alt='landingpage'>
 
 Once the player hits the play button, it triggers the start of the game. There, the player is presented with two images and 3 buttons, reflecting the options they can take.
 
-<img src='https://i.imgur.com/kYMYrZS.png' alt='pageload'>
+<img src='https://i.imgur.com/eBWiQAw.png' alt='pageload'>
 
 On page load, it's the player's move. I have also included a Score's tally above the two images for the player's FYI.
 
 And a live demo of me playing against the computer:
 
-<img src='https://i.imgur.com/7rfnW2a.gif' alt='playdemo'>
+<img src='https://media.giphy.com/media/U5beMZRKGxqpx1qVFq/giphy.gif' alt='playdemo' style="display: block; margin: 0 auto;">
 
 ### Timeframe
 
