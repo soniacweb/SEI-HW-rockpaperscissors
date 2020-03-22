@@ -1,3 +1,4 @@
+
 ![ga_cog_large_red_rgb](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png)
 
 <img src='https://i.imgur.com/wimTcs9.jpg' width='2000px'/>
@@ -39,7 +40,7 @@ Play screen:
 
 ### Functionality
 
-Link to Rock Paper Scissors is <a href="https://soniacweb.github.io/rockpaperscissors/">here.</a>
+Link to Rock Paper Scissors is <a href="https://soniacweb.github.io/SEI-HW-rockpaperscissors/">here.</a>
 
 Here's a screen grab of the landing page:
 
